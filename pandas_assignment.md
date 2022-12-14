@@ -57,9 +57,10 @@ rslt_df
 
 output :
         Name	    Age	    Stream	    Percentage
-0	    Ankit	    21	    Math	    88
-1	    Amit	    19	    Commerce	92
-2	    Aishwarya	20	    Science	    95
+	-------------------------------------------------
+0	Ankit	    21	    Math	    88
+1	Amit	    19	    Commerce	    92
+2	Aishwarya   20	    Science	    95
 
 ```
 ---
@@ -72,7 +73,7 @@ print(df)
 
 output:
 	Duration	Pulse	Maxpulse	Calories
-    -------------------------------------------
+    ------------------------------------------------------
 0	60	        110	    130	        409.1
 1	60	        117	    145	        479.0
 2	60	        103	    135	        340.0
@@ -89,8 +90,8 @@ df.rename(columns = {"Duration":"DURATION", "Pulse":"PULSE"})
 
 output : 
 
-	DURATION	PULSE	Maxpulse	Calories
-    ------------------------------------------
+	DURATION   PULSE    Maxpulse	Calories
+    ----------------------------------------------------
 0	    60	    110	    130	        409.1
 1	    60	    117	    145	        479.0
 2	    60	    103	    135	        340.0
@@ -109,8 +110,8 @@ print(df)
 
 
 output:
-	Duration	Pulse	Maxpulse	Calories
-    -------------------------------------------
+	Duration	Pulse	  Maxpulse	Calories
+    -----------------------------------------------------
 0	60	        110	    130	        409.1
 1	60	        117	    145	        479.0
 2	60	        103	    135	        340.0
@@ -126,8 +127,8 @@ print(df)
 
 output:
 
-	Duration	Pulse	Calories
-    -----------------------------
+	Duration	Pulse	    Calories
+    -----------------------------------------
 0	60	        110	      409.1
 1	60	        117	      479.0
 2	60	        103	      340.0
