@@ -137,27 +137,114 @@ output:
 
 ---
 
-Q6. How do you find the unique values in a column of a Pandas DataFrame?
+### Q6. How do you find the unique values in a column of a Pandas DataFrame?
+A) By using **unique()** method, we can find the unique values in a column of a Pandas DataFrame.
 
-Q7. How do you find the number of missing values in each column of a Pandas DataFrame?
+```
+data = {
+    'A':[1, 2, 3, 4, 5], 
+    'B':[6, 6, 8, 9, 10], 
+    'C':[6, 6, 6, 6, 6], 
+    'D':[7, 8, 9, 9, 9], 
+    'E':[8, 9, 7, 8, 9] }
 
-Q8. How do you fill missing values in a Pandas DataFrame with a specific value?
+#create a data frame
+df = pd.DataFrame(data)
 
-Q9. How do you concatenate two Pandas DataFrames?
+# to get unique values of B
+df.B.unique()
 
-Q10. How do you merge two Pandas DataFrames on a specific column?
+output : array([ 6,  8,  9, 10], dtype=int64)
 
-Q11. How do you group data in a Pandas DataFrame by a specific column and apply an aggregation function?
+```
+---
 
-Q12. How do you pivot a Pandas DataFrame?
+### Q7. How do you find the number of missing values in each column of a Pandas DataFrame?
+A) Using **isnull()** detect missing values in the given object and to find the count of number of missing values we can use **sum()** . 
 
-Q13. How do you change the data type of a column in a Pandas DataFrame?
+---
 
-Q14. How do you sort a Pandas DataFrame by a specific column?
+### Q8. How do you fill missing values in a Pandas DataFrame with a specific value?
+A) The fillna() function iterates through  dataset and fills all empty rows with a specified value.
 
-Q15. How do you create a copy of a Pandas DataFrame?
+---
 
-Q16. How do you filter rows of a Pandas DataFrame by multiple conditions?
+### Q9. How do you concatenate two Pandas DataFrames?
+A) The concat() function in pandas is used to append either columns or rows from one DataFrame to another. 
+
+---
+
+### Q10. How do you merge two Pandas DataFrames on a specific column?
+A) To merge two Pandas DataFrames on a specific column, you can use the **merge()** function. This function will take two DataFrames as arguments and a on keyword argument, which specifies the name of the column that you want to merge the DataFrames on. 
+
+```
+For example, suppose you have two DataFrames, df1 and df2, and you want to merge them on the column id. You can do this by using the following code:
+
+merged_df = pd.merge(df1, df2, on='id')
+
+```
+The merge function will return a new DataFrame that contains the merged data from both df1 and df2, based on the common values in the id column. This new DataFrame will contain all of the columns from both df1 and df2, so you may need to specify which columns you want to include in the final merged DataFrame using the columns keyword argument.
+
+---
+
+### Q11. How do you group data in a Pandas DataFrame by a specific column and apply an aggregation function?
+A) Pandas **groupby** is used for grouping the data according to the categories and apply a function to the categories. It also helps to aggregate data efficiently.
+
+---
+
+### Q12. How do you pivot a Pandas DataFrame?
+A) pandas.pivot(index, columns, values) function produces pivot table based on 3 columns of the DataFrame. Uses unique values from index / columns and fills with values.
+
+---
+
+### Q13. How do you change the data type of a column in a Pandas DataFrame?
+A) **pandas.DataFrame.astype()** This method is used to assign a specific data type to a DataFrame column.
+
+---
+
+### Q14. How do you sort a Pandas DataFrame by a specific column?
+A) Pandas **sort_values()** method sorts a data frame in Ascending or Descending order of passed Column.
+
+---
+
+### Q15. How do you create a copy of a Pandas DataFrame?
+A) The **copy()** method returns a copy of the DataFrame.
+
+```
+import pandas as pd
+
+data = {
+  "name": ["Siri", "David", "John"],
+  "age": [29, 30, 25]
+}
+
+df = pd.DataFrame(data)
+print(df)
+
+#Make a copy:
+
+newdf = df.copy()
+
+print(newdf)
+
+
+output : 
+    name  age
+0   Siri   29
+1  David   30
+2   John   25
+
+    name  age
+0   Siri   29
+1  David   30
+2   John   25
+
+```
+
+---
+
+### Q16. How do you filter rows of a Pandas DataFrame by multiple conditions?
+A) 
 
 Q17. How do you calculate the mean of a column in a Pandas DataFrame?
 
