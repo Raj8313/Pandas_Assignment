@@ -56,11 +56,11 @@ rslt_df = df_1[ df_1 ['Percentage'] > 80 ]
 rslt_df
 
 output :
-        Name	    Age	    Stream	    Percentage
+    Name	    Age	    Stream	    Percentage
 	-------------------------------------------------
-0	Ankit	    21	    Math	    88
-1	Amit	    19	    Commerce	    92
-2	Aishwarya   20	    Science	    95
+0	Ankit	    21	    Math	     88
+1	Amit	    19	    Commerce	 92
+2	Aishwarya   20	    Science	     95
 
 ```
 ---
