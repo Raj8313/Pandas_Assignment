@@ -245,15 +245,127 @@ output :
 ---
 
 ### Q16. How do you filter rows of a Pandas DataFrame by multiple conditions?
+A) Pandas DataaFrame can be filtered using **loc()** with multiple conditions.
+
+---
+
+### Q17. How do you calculate the mean of a column in a Pandas DataFrame?
+A) DataFrame.mean() function is used to get the mean of a particular column from pandas DataFrame. 
+
+```
+
+import pandas as pd
+technologies = {
+    'Courses':["Spark","PySpark","Python","pandas",None],
+    'Fee' :[20000,25000,22000,None,30000],
+    'Duration':['30days','40days','35days','None','50days'],
+    'Discount':[1000,2300,1200,2000,None]
+              }
+index_labels=['r1','r2','r3','r4','r5']
+df = pd.DataFrame(technologies,index=index_labels)
+
+
+# Using DataFrame.mean() method to get column average
+df2 = df["Fee"].mean()
+print(df2)
+
+
+output :
+24250.0
+
+```
+---
+
+### Q18. How do you calculate the standard deviation of a column in a Pandas DataFrame?
+A) By using **std()** function, we can calculate the standard deviation of a column in Pandas DataFrame. 
+
+```
+import pandas as pd
+
+data = {
+  "name": ["Siri", "David", "John"],
+  "age": [29, 30, 25]
+}
+
+df = pd.DataFrame(data)
+print(df)
+
+output :
+
+    name  age
+0   Siri   29
+1  David   30
+2   John   25
+
+print(df['age'].std())
+
+output : 2.6457513110645907
+
+```
+
+---
+
+### Q19. How do you calculate the correlation between two columns in a Pandas DataFrame?
+A) Correlation is used to summarize the strength and direction of the linear association between two quantitative variables. It is denoted by r and values between -1 and +1. A positive value for r indicates a positive association, and a negative value for r indicates a negative association.
+
+By using **corr()** function we can get the correlation between two columns in the dataframe.
+
+```
+# import pandas module
+import pandas as pd
+
+# create dataframe with 3 columns
+data = pd.DataFrame({
+	"column1": [12, 23, 45, 67],
+	"column2": [67, 54, 32, 1],
+	"column3": [34, 23, 56, 23]
+}
+)
+# get correlation between element wise
+print(data.corr())
+
+output:
+
+          column1   column2  column3
+column1  1.000000 -0.997048  0.00000
+column2 -0.997048  1.000000  0.07347
+column3  0.000000  0.073470  1.00000
+
+```
+
+---
+
+### Q20. How do you select specific columns in a DataFrame using their labels?
 A) 
 
-Q17. How do you calculate the mean of a column in a Pandas DataFrame?
+```
+import pandas as pd
 
-Q18. How do you calculate the standard deviation of a column in a Pandas DataFrame?
+data = {
+  "name": ["Siri", "David", "John"],
+  "age": [29, 30, 25]
+}
 
-Q19. How do you calculate the correlation between two columns in a Pandas DataFrame?
+df = pd.DataFrame(data)
+print(df)
 
-Q20. How do you select specific columns in a DataFrame using their labels?
+output :
+    name  age
+0   Siri   29
+1  David   30
+2   John   25
+
+
+print(df["age"])
+output : 
+
+0    29
+1    30
+2    25
+Name: age, dtype: int64
+
+```
+---
 
 Q21. How do you select specific rows in a DataFrame using their indexes?
 
@@ -264,3 +376,8 @@ Q23. How do you create a new column in a DataFrame based on the values of anothe
 Q24. How do you remove duplicates from a DataFrame?
 
 Q25. What is the difference between .loc and .iloc in Pandas?
+
+
+
+
+
