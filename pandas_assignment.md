@@ -368,15 +368,128 @@ Name: age, dtype: int64
 ---
 
 Q21. How do you select specific rows in a DataFrame using their indexes?
+A) Using  the **.iloc()** function we can select rows in a DataFrame using their indexes.
 
-Q22. How do you sort a DataFrame by a specific column?
+```
+	name	age
+0	Siri	29
+1	David	30
+2	John	25
 
-Q23. How do you create a new column in a DataFrame based on the values of another column?
 
-Q24. How do you remove duplicates from a DataFrame?
+df.iloc[0:1]
+
+output :
+
+    name	age
+    
+0	Siri	29
+
+```
+
+---
+
+### Q22. How do you sort a DataFrame by a specific column?
+A) Using **sort_values()** function we can sort specific column.
+
+```
+	name	age
+0	Siri	29
+1	David	30
+2	John	25
+
+df.sort_values(by=['age'])
+
+output :
+
+	name	age
+2	John	25
+0	Siri	29
+1	David	30
+
+```
+---
+
+
+### Q23. How do you create a new column in a DataFrame based on the values of another column?
+A) Using **pandas.DataFrame.apply()** function we can create a new column ina DataFrame based on the values of another column.
+
+```
+	name	age
+2	John	25
+0	Siri	29
+1	David	30
+
+df['doubled_age'] = df.apply(lambda row : row.age*2, axis = 1 )
+
+df
+
+output :
+
+	name	age	doubled_age
+0	Siri	29	58
+1	David	30	60
+2	John	25	50
+
+```
+---
+
+### Q24. How do you remove duplicates from a DataFrame?
+A) Using **drop_duplicates()** method helps in removing duplicates from the DataFrame.
+
+```
+import pandas as pd
+  
+data = {
+    "A": ["TeamA", "TeamB", "TeamB", "TeamC", "TeamA"],
+    "B": [50, 40, 40, 30, 50],
+    "C": [True, False, False, False, True]
+}
+  
+df = pd.DataFrame(data)
+
+df
+
+output :
+	A	B	C
+0	TeamA	50	True
+1	TeamB	40	False
+2	TeamB	40	False
+3	TeamC	30	False
+4	TeamA	50	True
+
+
+df_no_duplicates = df.drop_duplicates()
+
+df_no_duplicates
+
+output :
+
+
+        A	B	C
+0	TeamA	50	True
+1	TeamB	40	False
+3	TeamC	30	False
+
+```
+---
+
 
 Q25. What is the difference between .loc and .iloc in Pandas?
+A) **.loc** is to retrieve the data interms of rows and columns, it is a **label based data selecting method**. 
 
+```
+df.loc[rows, columns]
+df.loc[3] "this retrieves the data in 3rd row".
+df.loc[0:4, ["col_1", "col_2"]]
+the above syntax retrieves rows from 0 to 4, specified columns.
+``` 
+
+**.iloc** is indexed based data retrieving method interms of rows and columns.
+```
+df.iloc[0:4, 1:5]
+the above syntax retrieves rows from 0 to 4 and columns form 1st row to 4th row (5th row is excluded). 
+```
 
 
 
